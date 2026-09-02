@@ -1,62 +1,3 @@
-Создаем venv и активируем его
-
-Создаем ядро веб-сайта через команду -> django-admin startproject core .
-
-Создаем папки apps, static, templates, и файл .gitinore
-
-Сохраняем библиотеки в txt файл -> pip freeze > requirements.txt
-
-Делаем миграцию через 2 команды -> 
-1. python manage.py makemigrations, 
-2. python manage.py migrate                          
-
-Создаем приложения -> python manage.py startapp *название приложения*
-
-Настраиваем веб-сайт:
-1. settings.py -- строка "57"- BASE_DIR / 'templates'
--------------------------------------------------------------
-2. settingspy -- строка "119" - 
-STATICFILES_DIRS = [BASE_DIR / 'static']
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR/ 'media'
--------------------------------------------------------------
-3. urls.py -- строка "18" -
-from django.conf.urls.static import static
-from django.conf import settings
--------------------------------------------------------------
-4. urls.py -- строка "23" - 
-urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
--------------------------------------------------------------
-5. apps.py(внутри приложения) -- строка "4" - name = "apps.*название приложения*"
--------------------------------------------------------------
-6. settings.py -- строка "33" -
-добавляем 'apps.*название приложения*'
-
-По желания можно настроить язык и часовой пояс
-
-
-
-Настройка всего проекта  - Settings.py
-Настройка путей -  urls.py
-Настройка административной панели - admin.py
-Настройка приложений - apps.py
-Настройка базы данных - models.py
-Настройка логики сайта - views.py
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Инструкция для создания проекта
 ________________________________________________
 django-admin startproject <<Название>> .  Создает проект
@@ -111,3 +52,10 @@ python manage.py createsuperuser
 _________________________________________________
 Запуск сайта
 python manage.py runserver
+
+Настройка всего проекта  - Settings.py
+Настройка путей -  urls.py
+Настройка административной панели - admin.py
+Настройка приложений - apps.py
+Настройка базы данных - models.py
+Настройка логики сайта - views.py
